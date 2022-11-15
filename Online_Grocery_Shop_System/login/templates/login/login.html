@@ -1,0 +1,153 @@
+{% extends 'temp/index.html' %}
+{% block base %}
+<html>
+    <head><title></title></head>
+    <style>
+
+        .styled-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .styled-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+        
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+        
+        .styled-table tbody tr.active-row {
+            font-weight: bold;
+            color: #009879;
+        }
+        
+            </style>
+     <body> 
+        <h2 align="center">LOGIN</h2>
+        <form method="post">
+            {% csrf_token %}
+            <center>
+            <table  class="style-table" align="center">
+                <!--<tr>
+                    <td>USERNAME</td>
+                    <td><input type="text" name="name"</td>
+                </tr>
+                <tr>
+                    <td>PASSWORD</td>
+                    <td><input type="password" name="psw"</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" name="btn" value="login"</td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html> -->
+
+<!-- meta name="viewport" content="width=device-width, initial-scale=1">   -->
+ <!-- <title> Login Page </title>   -->
+<!-- <style>   
+ Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: pink;  
+}    -->
+<style>
+  button {   
+       background-color: #be2126;   
+       width: 100%;  
+        color: orange;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+        </style>
+ <!-- form {   
+        border: 3px solid #f1f1f1;   
+    }   
+ input[type=text], input[type=password] {   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }    --> 
+        
+<!--      
+ /* .container {   
+        padding: 25px;   
+        background-color: lightblue;  
+    }    */    -->
+   
+
+    <!-- <center> <h1>  Login Form </h1> </center>    -->
+    <thead>
+    <form>  
+        <div class="container">   <tr>
+            <td><label>Username : </label>   </td>
+           <td> <input type="text" placeholder="Enter Username" name="name" required> </td> </tr>
+          <tr> <td> <label>Password : </label>   </td>
+           <td> <input type="password" placeholder="Enter Password" name="psw" required>  </td>
+            <tr><td></td>
+                
+                <td><button type="submit">Login</button></td>
+                </tr>
+                <tr>
+                    <td> <input type="checkbox" checked="checked"> Remember me</td>
+                
+                   <td> <button type="button" class="cancelbtn"> Cancel</button>  </td>
+                   <td> &nbsp&nbsp  Forgot <a href="#"> password? </a>  </td>  
+                </td></tr>
+
+           <tr>
+            
+                    
+            
+            </tr> 
+         
+        </div>   
+    </form></thead>
+
+<div>
+    <tbody>
+    {% if msg %}
+    <script>
+        alert("username or password incorrect")
+    </script>
+    {% endif %}</tbody>
+
+</div>
+</table></center>     
+</body> 
+</html>
+   
+{% endblock %}

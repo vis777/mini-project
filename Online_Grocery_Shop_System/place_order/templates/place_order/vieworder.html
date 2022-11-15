@@ -1,0 +1,79 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<html>
+    <head></head>
+    <style>
+
+        .styled-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .styled-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+        
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+        
+        .styled-table tbody tr.active-row {
+            font-weight: bold;
+            color: #009879;
+        }
+        
+            </style>
+    <title>view order</title>
+    <body>
+        <h1><center>view order</center></h1>
+        <center>
+        <table align="center" border="1" class="styled-table">
+            <thead>
+            <tr>
+                <th>product name</th>
+                <th>Image</th>
+                <th>amount</th>
+                <th>quantity</th>
+                <th>status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in ok %}
+
+            <tr >
+                <td>{{ i.prod.productname }}</td>
+                <td><img src="/static/{{ i.prod.image }}" width="100px" height="100px"></td>
+                <td>{{ i.amount }}</td>
+                <td>{{ i.quantity }}</td>
+                <td>{{ i.status }}</td>
+                <td><a href="/place_order/update/{{i.order_id}}">update quantity</a></td>
+                
+                <td><a href="/place_order/ dtl/{{i.order_id}}">remove</a></td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td><a href="/payment/ paym/">Buy</a></td>
+            </tr>
+        </tbody>
+        </table></center>
+    </body>
+</html>
+{% endblock %}

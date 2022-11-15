@@ -1,0 +1,67 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<html>
+    <head><title></title></head>
+    <body>
+        <style>
+
+            .styled-table {
+                border-collapse: collapse;
+                margin: 25px 0;
+                font-size: 0.9em;
+                font-family: sans-serif;
+                min-width: 400px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            }
+            
+            .styled-table thead tr {
+                background-color: #009879;
+                color: #ffffff;
+                text-align: left;
+            }
+            .styled-table th,
+            .styled-table td {
+                padding: 12px 15px;
+            }
+            
+            .styled-table tbody tr {
+                border-bottom: 1px solid #dddddd;
+            }
+            
+            .styled-table tbody tr:nth-of-type(even) {
+                background-color: #f3f3f3;
+            }
+            
+            .styled-table tbody tr:last-of-type {
+                border-bottom: 2px solid #009879;
+            }
+            
+            .styled-table tbody tr.active-row {
+                font-weight: bold;
+                color: #009879;
+            }
+            
+                </style>
+        
+        <h2 align="center"> view payment</h2>
+        <center>
+        <table align="center" border="2" class="styled-table">
+            <thead>
+            <tr>
+                <th>card_holdername</th>
+                <th>amount</th>
+            </tr></thead>
+            <tbody></tbody>
+            {% for i in t %}
+            <tr>
+                <td>{{ i.card_holdername }}</td>
+                <td>{{ i.amount }}</td>
+            </tr>
+            {% endfor %}</tbody>
+        </center>
+            </table>
+            
+            </body>
+            </html>
+
+            {% endblock %}

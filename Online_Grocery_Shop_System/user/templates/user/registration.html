@@ -1,0 +1,182 @@
+{% extends 'temp/index.html' %}
+{% block base %}
+<html>
+    <head><title></title></head>
+    <style>
+
+        .styled-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .styled-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+        
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+        
+        .styled-table tbody tr.active-row {
+            font-weight: bold;
+            color: #009879;
+        }
+        
+            </style>
+    <body>
+         <h2 align="center">Register</h2>
+        <form method="post">
+            {% csrf_token %}
+            <center>
+             <table align="center" class="styled-table">
+                <tbody>
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" name="fname" required=""></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" name="lname" required=""></td>
+                </tr>
+                <tr>
+                    <td>username</td>
+                    <td><input type="text" name="name" required=""></td>
+                </tr>
+                 <tr>
+                    <td>password</td>
+                    <td><input type="password" name="psw" required=""></td>
+                </tr> 
+                  <tr>
+                    <td>confirm password</td>
+                    <td><input type="password" name="conpsw"</td>
+                 </tr>  
+                <tr>
+                    <td>gender</td>
+                    <td><input type="radio" name="gender" value="male">male
+                        <input type="radio" name="gender" value="female">female
+                     </td>
+                </tr>
+                <tr>
+                    <td>email_id</td>
+                    <td><input type="text" name="mail" required=""></td>
+                </tr>
+                <tr>
+                    <td>place</td>
+                    <td><input type="text" name="place" required=""></td>
+                </tr>
+                <tr>
+                    <td>post</td>
+                    <td><input type="text" name="post" required=""></td>
+                </tr>
+                <tr>
+                    <td>pin</td>
+                    <td><input type="number" name="pin" required=""></td>
+                </tr>
+                <tr>
+                    <td>phone</td>
+                    <td><input type="number" name="phone" required=""></td>
+                </tr>
+                    <td></td>
+                    <td><input type="submit" name="btn" value="login"</td>
+                </tr>
+                </tbody>
+            </table> 
+             </center>
+                <!-- <body bgcolor="Lightskyblue">  
+                <br>  
+                <br>  
+                <form>  
+                  
+                <label> Firstname </label>         
+                <input type="text" name="fname" size="15"/> <br> <br>   -->
+                <!-- <label> Middlename: </label>     
+                <input type="text" name="middlename" size="15"/> <br> <br>   -->
+                <!-- <label> Lastname: </label>         
+                <input type="text" name="lname" size="15"/> <br> <br>  
+                  
+                <label>   
+                Course :  
+                </label>   
+                <select>  
+                <option value="Course">Course</option>  
+                <option value="BCA">BCA</option>  
+                <option value="BBA">BBA</option>  
+                <option value="B.Tech">B.Tech</option>  
+                <option value="MBA">MBA</option>  
+                <option value="MCA">MCA</option>  
+                <option value="M.Tech">M.Tech</option>  
+                </select>  
+                  
+                <br>  
+                <br>  
+                <label>    -->
+                <!-- Username:  
+                <input type="Username" id="name" name="name"/> <br>    
+                <br> <br>  
+                Password:  
+                <input type="Password" id="pass" name="psw"> <br>   
+                <br> <br> 
+                Gender :  
+                </label><br>  
+                <input type="radio" name="male"/> Male <br>  
+                <input type="radio" name="female"/> Female <br>  
+                 <input type="radio" name="other"/> Other   -->
+                <!-- <br>  
+                <br>   -->
+                  
+                <!-- <label>   
+                Phone :  
+                </label>  
+                <input type="text" name="country code"  value="+91" size="2"/>   
+                <input type="text" name="phone" size="10"/> <br> <br>  
+                Address  
+                <br>  
+                <textarea cols="80" rows="5" value="address">  
+                </textarea>  
+                <br> <br>  -->
+                <!-- Email:  
+                <input type="email" id="email" name="email"/> <br>    
+                <br> <br>  
+                Password:  
+                <input type="Password" id="pass" name="pass"> <br>   
+                <br> <br>  
+                 Re-type password:  
+                <input type="Password" id="repass" name="repass"> <br> <br> 
+                <input type="button" value="Submit"/>
+                Place:  
+                <input type="text" id="text" name="place"> <br>   
+                <br> <br>
+                Post:  
+                <input type="text" id="text" name="post"> <br>   
+                <br> <br>
+                Pin:  
+                <input type="number" id="pin" name="pin"> <br>   
+                <br> <br>
+                Phone:  
+                <input type="number" id="phone" name="phone"> <br>   
+                <br> <br>
+                <input type="button" value="Submit"/>  
+                </form>
+                </body> --> 
+        </form>
+    </body>
+</html>
+{% endblock %}
